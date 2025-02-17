@@ -1,13 +1,21 @@
-import { createSessionID, verifyByID } from '../controllers/verifyUser';
+import { createSessionID, verifyByID, success, failure} from '../controllers/verifyUser';
 
-import { Router } from 'express';
+import express, { Router } from 'express';
 
-const routes = Router();
+const router = Router();
 
 console.log("Loading - /verify route");
 
-routes.post("/createsession", createSessionID);
+// router.use(express.static('../public/verify'))
 
-routes.get("/:uid/:sid", verifyByID);
+router.post("/createsession", createSessionID);
 
-export default routes;
+router.get("/", (req, res) => res.redirect("/"))
+
+router.get("/:uid/:sid", verifyByID);
+
+router.get("/success", success);
+
+router.get("/fail", failure);
+
+export default router;
