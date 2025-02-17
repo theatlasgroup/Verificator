@@ -1,0 +1,24 @@
+$uid -> The person whos managing that users sign on
+$vid -> The person being verified
+$otp -> one time password
+
+(Priority)
+Verification: http://localhost/verify/$uid/$otp
+- success: http://localhost/verify/success
+- fail: http://localhost/verify/fail
+
+
+(Will do at later date)
+Control:
+- authentication: http://localhost/auth
+  - returns body:
+{
+    sessionid: $sid
+    data: {
+        email: $email
+        password: $password
+    }
+}
+
+how to create apikeys:
+Date.now() * user_id * salt -> turn into hash

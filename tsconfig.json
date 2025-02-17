@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "Node",
+        "rootDir": "src",
+        "outDir": "bin",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "allowJs": false,
+        "allowSyntheticDefaultImports": true,
+        "removeComments": true
+    },
+    "include": [
+        "src/",
+        "package.json",
+        "environment.d.ts"
+    ],
+    "exclude": [
+        "node_modules/",
+        "**/*.specs.ts"
+    ],
+    "compileOnSave": true,
+}
